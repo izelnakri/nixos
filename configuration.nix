@@ -3,13 +3,13 @@
 let
   user = "izelnakri";
   password = "coolie";
-  SSID = "Urban Campus | Member";
-  SSIDpassword = "L0v31sth3k3y";
+  SSID = "UC_wifi_2D";
+  SSIDpassword = "L0v31sth3k3y-2D";
   interface = "wlan0";
   hostname = "nixos-pi-1";
 in {
   imports = [
-    .../nixos-hardware/raspberry-pi/4
+    ./nixos-hardware/raspberry-pi/4
   ];
 
   boot = {
@@ -32,7 +32,6 @@ in {
   hardware = {
     enableRedistributableFirmware = true;
     raspberry-pi."4".apply-overlays-dtmerge.enable = true;
-    raspberry-pi."4".audio = true;
     raspberry-pi."4".fkms-3d.enable = true;
     deviceTree = {
       enable = true;
@@ -51,8 +50,6 @@ in {
   };
 
   sound.enable = true;
-
-  console.enable = false;
 
   users = {
     mutableUsers = false;
